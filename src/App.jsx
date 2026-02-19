@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import Login from "./routes/Login";
 import Register from "./routes/Register";
 import Home from "./routes/Home";
 import Blog from "./routes/Blog";
@@ -6,10 +7,12 @@ import Contact from "./routes/Contact";
 import Shop from "./routes/Shop";
 import Cart from "./routes/Cart";
 import Checkout from "./routes/Checkout";
+import Navbar from "./components/common/Navbar";
 
 function App() {
   return (
     <>
+      <Navbar />
       <Routes>
         <Route path="login" element={<Login />}></Route>
         <Route path="register" element={<Register />}></Route>
