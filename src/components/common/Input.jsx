@@ -1,5 +1,3 @@
-import React from "react";
-
 const Input = ({ title, name, placeholder, type, value, onchange, error }) => {
   return (
     <div className="flex flex-col gap-y-5.5">
