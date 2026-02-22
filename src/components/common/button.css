@@ -1,0 +1,27 @@
+@reference "tailwindcss";
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 flex justify-center items-center rounded-md cursor-pointer active:ring-1;
+  }
+
+  .btn-sm {
+    @apply min-w-24 h-10;
+  }
+
+  .btn-md {
+    @apply min-w-24 h-12;
+  }
+
+  .btn-lg {
+    @apply min-w-24 h-16;
+  }
+
+  .btn-primary {
+    @apply bg-[#B88E2F] text-white hover:bg-[#B88E2F]/70 active:ring-[#B88E2F] active:bg-[#B88E2F];
+  }
+
+  .btn-outline {
+    @apply bg-transparent ring-1 ring-black text-black hover:ring-black/70 hover:text-black/70 active:ring-[#B88E2F] active:text-[#B88E2F] rounded-[10px];
+  }
+}

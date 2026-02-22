@@ -4,3 +4,7 @@
 * {
   font-family: "Poppins";
 }
+
+:root {
+  --primary-color: #b88e2f;
+}
