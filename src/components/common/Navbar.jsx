@@ -8,9 +8,9 @@ import menu from "@/assets/images/icons/menu.svg";
 import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const linkClasses = ({ isActive }) =>
-    isActive ? "font-semibold underline underline-offset-2 " : "font-normal";
+    isActive ? "font-semibold " : "font-normal";
   return (
-    <div className="h-25 flex justify-between items-center gap-12 px-14 bg-white">
+    <nav className="h-25 flex justify-between items-center gap-12 px-14 bg-white sticky top-0">
       <Link to={"/"}>
         <img src={logo} alt="app logo" />
       </Link>
@@ -19,7 +19,7 @@ const Navbar = () => {
         <img src={menu} alt="menu" className="h-7 w-7 " />
       </div>
 
-      <div className="md:flex gap-6 lg:gap-10 xl:gap-18 hidden under">
+      <div className="md:flex gap-6 lg:gap-10 xl:gap-18 hidden font-medium ">
         <NavLink className={linkClasses} to={""}>
           Home
         </NavLink>
@@ -40,7 +40,7 @@ const Navbar = () => {
         <img src={like} alt="like" />
         <img src={cart} alt="cart" />
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -22,14 +22,14 @@ const prideItems = [
   },
   {
     icon: customerSupport,
-    heading: "24/7 Support",
+    heading: "24 / 7 Support",
     text: "Dedicated support",
   },
 ];
 
 const OurPride = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 items-center gap-2 bg-[#FAF3EA] py-25 px-6 lg:px-10 xl:px-13">
+    <div className="grid grid-cols-2 md:grid-cols-4 justify-end items-center gap-2 bg-[#FAF3EA] py-25 px-6 lg:px-10 xl:px-13">
       {prideItems.map((item) => (
         <PrideItem icon={item.icon} heading={item.heading} text={item.text} />
       ))}
