@@ -23,7 +23,7 @@ const Button = ({
     <button
       type={type}
       onClick={onclick}
-      className={`btn ${sizeClasses[size]} ${variantClasses[variant]}`}
+      className={`btn ${sizeClasses[size]} ${variantClasses[variant]} w-full`}
     >
       {label}
     </button>

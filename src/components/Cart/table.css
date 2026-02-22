@@ -1,0 +1,8 @@
+/* @reference "tailwindcss";
+
+@layer components {
+  th,
+  td {
+    @apply py-5;
+  }
+} */
