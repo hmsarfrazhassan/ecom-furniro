@@ -26,7 +26,7 @@ const Category = () => {
   return (
     <div className="py-10">
       <div className="flex flex-col justify-center items-center mb-10">
-        <h2 className="text-[32px] font-bold text-[#333333]">
+        <h2 className="text-[40px] font-bold text-[#333333]">
           Browse The Range
         </h2>
         <p className="text-xl text-[#666666] font-normal">

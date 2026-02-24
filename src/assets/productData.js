@@ -43,4 +43,40 @@ export const products = [
     originalPrice: "1,500",
     discountedPrice: null,
   },
+
+  {
+    id: 5,
+    name: "Temya",
+    image: prod5,
+    category: "Night lamp",
+    originalPrice: "1,500",
+    discountedPrice: null,
+  },
+
+  {
+    id: 6,
+    name: "Hfnmie",
+    image: prod6,
+    category: "Night lamp",
+    originalPrice: "1,500",
+    discountedPrice: null,
+  },
+
+  {
+    id: 7,
+    name: "Wsplio",
+    image: prod7,
+    category: "Night lamp",
+    originalPrice: "1,500",
+    discountedPrice: null,
+  },
+
+  {
+    id: 8,
+    name: "Rmichro",
+    image: prod8,
+    category: "Night lamp",
+    originalPrice: "1,500",
+    discountedPrice: null,
+  },
 ];

@@ -1,19 +1,13 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import ProductCard from "../common/ProductCard";
-import { products } from "../../assets/productData";
+import ProductCard from "./common/ProductCard";
+import { products } from "@/assets/productData";
 import { Link } from "react-router-dom";
 
-const OurProducts = () => {
-  const dispatch = useDispatch();
-
-  const handleAdd = () => {
-    dispatch(addToCart({ id: 1, name: "Shoes" }));
-  };
+const RelatedProducts = () => {
   return (
-    <div className="">
+    <div>
       <h1 className="font-bold text-[40px] text-center mb-10 text-black">
-        Our Products
+        Related Products
       </h1>
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-11/12 xl:w-10/12 mx-auto">
         {products.map((prod, index) =>
@@ -39,4 +33,4 @@ const OurProducts = () => {
   );
 };
 
-export default OurProducts;
+export default RelatedProducts;

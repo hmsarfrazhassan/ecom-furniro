@@ -38,7 +38,9 @@ const Navbar = () => {
         <img src={user} alt="user" />
         <img src={search} alt="search" />
         <img src={like} alt="like" />
-        <img src={cart} alt="cart" />
+        <Link to={"/cart"}>
+          <img src={cart} alt="cart" />
+        </Link>
       </div>
     </nav>
   );

@@ -2,17 +2,10 @@ import React from "react";
 import deleteIcon from "@/assets/images/icons/delete.svg";
 import "./table.css";
 import cartImg from "@/assets/images/cart1.png";
+import { useSelector } from "react-redux";
 
-const cartList = [
-  {
-    id: 1,
-    image: cartImg,
-    productName: "Asgaard sofa",
-    productPrice: "250000",
-    quantity: 1,
-  },
-];
 const CartTable = () => {
+  const cartList = useSelector((state) => state.cart.items);
   return (
     <div>
       <table className="w-full text-center">
@@ -37,10 +30,12 @@ const CartTable = () => {
                 />
               </td>
               <td>
-                <p className="text-[#9F9F9F]">{item.productName}</p>
+                <p className="text-[#9F9F9F]">{item.name}</p>
               </td>
               <td>
-                <p className="text-[#9F9F9F]">Rs. {item.productPrice}.00</p>
+                <p className="text-[#9F9F9F]">
+                  Rs. {item.discountedPrice ?? item.originalPrice}.00
+                </p>
               </td>
               <td className="">
                 <p className="mx-auto h-10 w-10 rounded-lg border border-[#9F9F9F] flex justify-center items-center">
@@ -48,7 +43,7 @@ const CartTable = () => {
                 </p>
               </td>
               <td>
-                <p>Rs. 250, 000</p>
+                <p>Rs. {item.discountedPrice ?? item.originalPrice}</p>
               </td>
               <td>
                 <img src={deleteIcon} alt="delete" />
