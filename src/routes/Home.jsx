@@ -3,7 +3,7 @@ import Hero from "../components/Home/Hero";
 import Category from "../components/Home/Category";
 import ShowRoom from "../components/Home/ShowRoom";
 import OurProducts from "../components/Home/OurProducts";
-import sliderImg from "@/assets/images/inspiration.png";
+import sliderImg from "@/assets/images/Inspiration.png";
 
 function Home() {
   return (
