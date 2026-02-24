@@ -9,7 +9,9 @@ const ProductCard = ({
 }) => {
   return (
     <div className="relative group overflow-hidden">
-      <img src={image} alt="product" className="h-80 w-full object-cover" />
+      <div className="h-60 lg:h-80 w-full overflow-hidden">
+        <img src={image} alt="product" className="h-full w-full object-cover" />
+      </div>
 
       <div className="flex flex-col gap-2 bg-[#F4F5F7] px-4 pt-4 pb-5">
         <p className="font-semibold text-2xl text-black">{name}</p>
