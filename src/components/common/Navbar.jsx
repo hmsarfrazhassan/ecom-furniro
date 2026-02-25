@@ -10,7 +10,7 @@ const Navbar = () => {
   const linkClasses = ({ isActive }) =>
     isActive ? "font-semibold " : "font-normal";
   return (
-    <nav className="h-25 flex justify-between items-center gap-12 px-14 bg-white sticky top-0">
+    <nav className="z-30 h-25 flex justify-between items-center gap-12 px-14 bg-white sticky top-0">
       <Link to={"/"}>
         <img src={logo} alt="app logo" />
       </Link>
