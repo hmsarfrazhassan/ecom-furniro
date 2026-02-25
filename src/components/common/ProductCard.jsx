@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ProductCard = ({
   id,
   name,
@@ -5,10 +7,10 @@ const ProductCard = ({
   category,
   originalPrice,
   discountedPrice,
-  onclick,
+  onClick,
 }) => {
   return (
-    <div className="relative group overflow-hidden">
+    <Link to={`/product/${id}`} className="relative group overflow-hidden">
       <div className="h-60 lg:h-80 w-full overflow-hidden">
         <img src={image} alt="product" className="h-full w-full object-cover" />
       </div>
@@ -30,13 +32,17 @@ const ProductCard = ({
 
       <div className="z-20 absolute inset-0 bg-[#3A3A3A]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
         <button
-          onClick={onclick}
+          onClick={(e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            onClick?.();
+          }}
           className="bg-white text-[#B88E2F] px-6 py-2 font-semibold hover:bg-white/90 active:bg-[#B88E2F] active:text-white transition cursor-pointer"
         >
           Add to Cart
         </button>
       </div>
-    </div>
+    </Link>
   );
 };
 

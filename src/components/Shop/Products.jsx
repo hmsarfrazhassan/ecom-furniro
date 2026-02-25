@@ -21,7 +21,7 @@ const Products = () => {
             category={prod.category}
             originalPrice={prod.originalPrice}
             discountedPrice={prod.discountedPrice}
-            onclick={() => handleDispatch(prod)}
+            onClick={() => handleDispatch(prod)}
           />
         ))}
       </div>
