@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Input from "../common/Input";
 import Button from "../common/Button";
+import { signup } from "../../services/authService";
 
 const Signup = () => {
   const [signupForm, setSignupForm] = useState({
-    firstName: "",
-    lastName: "",
+    username: "",
     email: "",
+    city: "",
+    phoneNumber: "",
     password: "",
     confirmPassword: "",
   });
@@ -26,16 +28,16 @@ const Signup = () => {
 
   const validateField = (name, value) => {
     let error = "";
-    if (name === "firstName") {
+    if (name === "username") {
       if (value.length < 3) {
         error = "Firsname must be atleast 3 character";
-      } else if (!isNaN(value)) error = "Firstname must not be number";
+      } else if (!isNaN(value)) error = "username must not be number";
     }
 
-    if (name === "lastName") {
+    if (name === "city") {
       if (value.length < 3) {
         error = "Lasname must be atleast 3 character";
-      } else if (!isNaN(value)) error = "Lastname must not be number";
+      } else if (!isNaN(value)) error = "city must not be number";
     }
 
     if (name === "email" && !emailRegex.test(value)) {
@@ -60,7 +62,6 @@ const Signup = () => {
 
   const validateForm = () => {
     let newErrors = {};
-    // Required fields check
     Object.keys(signupForm).forEach((key) => {
       if (!signupForm[key]) {
         newErrors[key] = "This field is required";
@@ -77,12 +78,18 @@ const Signup = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitted(true);
     if (!validateForm()) return;
-
-    alert(JSON.stringify(signupForm));
+    try {
+      const data = await signup(signupForm);
+      console.log(data);
+    } catch (error) {
+      setErrors({
+        api: error.response?.data?.message || "Something went wrong",
+      });
+    }
   };
   return (
     <div className="w-11/12 md:w-1/2 lg:w-1/3 mx-auto bg-[#F9F1E7] p-20">
@@ -92,20 +99,10 @@ const Signup = () => {
           type={"text"}
           title={"First name"}
           placeholder={"First name"}
-          name={"firstName"}
-          value={signupForm.firstName}
+          name={"username"}
+          value={signupForm.username}
           onchange={handleChange}
-          error={errors.firstName}
-        />
-
-        <Input
-          type={"text"}
-          title={"Last name"}
-          placeholder={"Last name"}
-          name={"lastName"}
-          value={signupForm.lastName}
-          onchange={handleChange}
-          error={errors.lastName}
+          error={errors.username}
         />
 
         <Input
@@ -116,6 +113,26 @@ const Signup = () => {
           value={signupForm.email}
           onchange={handleChange}
           error={errors.email}
+        />
+
+        <Input
+          type={"text"}
+          title={"City"}
+          placeholder={"City"}
+          name={"city"}
+          value={signupForm.city}
+          onchange={handleChange}
+          error={errors.city}
+        />
+
+        <Input
+          type={"text"}
+          title={"Phone"}
+          placeholder={"Enter phoneNumber numbrt"}
+          name={"phoneNumber"}
+          value={signupForm.phoneNumber}
+          onchange={handleChange}
+          error={errors.phoneNumber}
         />
 
         <Input
