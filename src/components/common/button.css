@@ -4,7 +4,9 @@
   .btn {
     @apply px-4 py-2 flex justify-center items-center rounded-md cursor-pointer active:ring-1;
   }
-
+  .btn-xs {
+    @apply h-8 text-xs rounded-full;
+  }
   .btn-sm {
     @apply min-w-24 h-10;
   }

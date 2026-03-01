@@ -10,6 +10,7 @@ import Checkout from "./routes/Checkout";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import ProductDetail from "./routes/ProductDetail";
+import Comparison from "./routes/Comparison";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="checkout" element={<Checkout />} />
         <Route path="shop" element={<Shop />}></Route>
         <Route path="product/:id" element={<ProductDetail />} />
+        <Route path="comparison" element={<Comparison />} />
       </Routes>
       <Footer />
     </>

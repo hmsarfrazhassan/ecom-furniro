@@ -2,6 +2,7 @@ import React from "react";
 import "./button.css";
 
 const sizeClasses = {
+  xs: "btn-xs",
   sm: "btn-sm",
   md: "btn-md",
   lg: "btn-lg",

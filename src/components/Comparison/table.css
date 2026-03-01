@@ -1,0 +1,21 @@
+@reference "tailwindcss";
+
+@layer components {
+  .comparison table {
+    @apply w-full overflow-auto;
+  }
+  .comparison th,
+  .comparison td {
+    @apply p-3 text-start;
+  }
+
+  .comparison tbody {
+    @apply border-t border-[#E8E8E8];
+  }
+  .comparison tbody td:first-child {
+    @apply border-s-0;
+  }
+  .comparison tbody td {
+    @apply border-s border-[#E8E8E8] text-xl;
+  }
+}

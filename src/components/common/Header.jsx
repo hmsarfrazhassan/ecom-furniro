@@ -11,7 +11,9 @@ const Header = ({ title }) => {
       style={{ backgroundImage: `url(${topBgImage})` }}
     >
       <img src={appLogo} alt="logo" />
-      <h1 className="font-medium text-5xl capitalize">{title}</h1>
+      <h1 className="font-medium text-3xl md:text-4 lg:text-5xl capitalize">
+        {title}
+      </h1>
       <div className="flex justify-center items-center">
         <Link to="/" className="font-medium">
           Home
