@@ -7,8 +7,16 @@ import cart from "@/assets/images/icons/cart.svg";
 import menu from "@/assets/images/icons/menu.svg";
 import { IoCloseOutline } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../../features/cart/cartSlice";
 import Button from "./Button";
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const cartList = useSelector((state) => state.cart.items);
+
+  const handleDelete = (id) => {
+    dispatch(removeFromCart(id));
+  };
   const [isCartOpen, setIsCartOpen] = useState(false);
   const linkClasses = ({ isActive }) =>
     isActive ? "font-semibold " : "font-normal";
@@ -72,51 +80,64 @@ const Navbar = () => {
             </div>
 
             <div className="space-y-4 h-full overflow-auto ">
-              <div className="flex justify-between items-center gap-3">
-                <div className="size-28 p-1 bg-[#F9F1E7] rounded-md">
-                  <img src="" alt="" />
-                </div>
-                <div>
-                  <p>Asgaard sofa</p>
-                  <p>
-                    1 x{" "}
-                    <span className="text-[#B88E2F] text-xs">Rs. 200,000</span>
-                  </p>
-                </div>
-                <div className="bg-[#D9D9D9] text-white rounded-full">
-                  <IoCloseOutline className="size-5" />
-                </div>
-              </div>
+              {cartList.length > 0 ? (
+                cartList.map((item) => (
+                  <div className="flex justify-between items-center gap-3">
+                    <div className="size-28 p-1 bg-[#F9F1E7] rounded-md">
+                      <img src={item.image} alt="" />
+                    </div>
+                    <div>
+                      <p>{item.name}</p>
+                      <p>
+                        {item.quantity} x
+                        <span className="text-[#B88E2F] text-xs px-3">
+                          Rs. {item.originalPrice}
+                        </span>
+                      </p>
+                    </div>
+                    <div className="bg-[#D9D9D9] text-white rounded-full">
+                      <IoCloseOutline
+                        className="size-5"
+                        onClick={() => handleDelete(item.id)}
+                      />
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p>Cart is empty</p>
+              )}
             </div>
 
-            <div className="mt-auto bottom-0">
-              <hr className="py-3" />
-              <div className="flex gap-3">
-                <Link
-                  to={"/cart"}
-                  onClick={() => setIsCartOpen(false)}
-                  className="h-7 w-full rounded-full border text-sm flex justify-center items-center hover:border/70 active:border-[#B88E2F] active:text-[#B88E2F]"
-                >
-                  Cart
-                </Link>
+            {cartList.length > 0 && (
+              <div className="mt-auto bottom-0">
+                <hr className="py-3" />
+                <div className="flex gap-3">
+                  <Link
+                    to={"/cart"}
+                    onClick={() => setIsCartOpen(false)}
+                    className="h-7 w-full rounded-full border text-sm flex justify-center items-center hover:border/70 active:border-[#B88E2F] active:text-[#B88E2F]"
+                  >
+                    Cart
+                  </Link>
 
-                <Link
-                  to={"/checkout"}
-                  onClick={() => setIsCartOpen(false)}
-                  className="h-7 w-full rounded-full border text-sm flex justify-center items-center hover:border/70 active:border-[#B88E2F] active:text-[#B88E2F]"
-                >
-                  Checkout
-                </Link>
+                  <Link
+                    to={"/checkout"}
+                    onClick={() => setIsCartOpen(false)}
+                    className="h-7 w-full rounded-full border text-sm flex justify-center items-center hover:border/70 active:border-[#B88E2F] active:text-[#B88E2F]"
+                  >
+                    Checkout
+                  </Link>
 
-                <Link
-                  to={"/comparison"}
-                  onClick={() => setIsCartOpen(false)}
-                  className="h-7 w-full rounded-full border text-sm flex justify-center items-center hover:border/70 active:border-[#B88E2F] active:text-[#B88E2F]"
-                >
-                  Comparison
-                </Link>
+                  <Link
+                    to={"/comparison"}
+                    onClick={() => setIsCartOpen(false)}
+                    className="h-7 w-full rounded-full border text-sm flex justify-center items-center hover:border/70 active:border-[#B88E2F] active:text-[#B88E2F]"
+                  >
+                    Comparison
+                  </Link>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       )}

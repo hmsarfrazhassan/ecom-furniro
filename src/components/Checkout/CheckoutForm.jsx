@@ -2,8 +2,10 @@ import React from "react";
 import Input from "../common/Input";
 import Button from "../common/Button";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const CheckoutForm = () => {
+  const totalPrice = useSelector((state) => state.cart.totalPrice);
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -42,16 +44,16 @@ const CheckoutForm = () => {
               <td className="text-start text-[#9F9F9F] py-2">
                 Asgaard sofa x 1
               </td>
-              <td className="text-end font-light py-2">Rs. 250,000.00</td>
+              <td className="text-end font-light py-2">Rs. {totalPrice}.00</td>
             </tr>
             <tr>
               <td className="text-start py-2">Subtotal</td>
-              <td className="text-end font-light py-2"> Rs. 250,000.00</td>
+              <td className="text-end font-light py-2"> Rs. {totalPrice}.00</td>
             </tr>
             <tr>
               <td className="text-start py-2">Total</td>
               <td className="text-end font-bold text-2xl text-[#B88E2F] py-2">
-                Rs. 250,000.00
+                Rs. {totalPrice}.00
               </td>
             </tr>
           </tbody>

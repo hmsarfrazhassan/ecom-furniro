@@ -13,7 +13,7 @@ export const products = [
     name: "Syltherine",
     image: prod1,
     category: "Stylish cafe chair",
-    originalPrice: "25,000",
+    originalPrice: "25000",
     discountedPrice: null,
   },
 
@@ -22,7 +22,7 @@ export const products = [
     name: "Lolito",
     image: prod3,
     category: "Luxury big sofa",
-    originalPrice: "7,000",
+    originalPrice: "7000",
     discountedPrice: null,
   },
 
@@ -31,7 +31,7 @@ export const products = [
     name: "Respira",
     image: prod2,
     category: "Stylish cafe chair",
-    originalPrice: "20,000",
+    originalPrice: "20000",
     discountedPrice: null,
   },
 
@@ -40,7 +40,7 @@ export const products = [
     name: "Grifo",
     image: prod4,
     category: "Night lamp",
-    originalPrice: "1,500",
+    originalPrice: "1500",
     discountedPrice: null,
   },
 
@@ -49,7 +49,7 @@ export const products = [
     name: "Temya",
     image: prod5,
     category: "Night lamp",
-    originalPrice: "1,500",
+    originalPrice: "1500",
     discountedPrice: null,
   },
 
@@ -58,7 +58,7 @@ export const products = [
     name: "Hfnmie",
     image: prod6,
     category: "Night lamp",
-    originalPrice: "1,500",
+    originalPrice: "1500",
     discountedPrice: null,
   },
 
@@ -67,7 +67,7 @@ export const products = [
     name: "Wsplio",
     image: prod7,
     category: "Night lamp",
-    originalPrice: "1,500",
+    originalPrice: "1500",
     discountedPrice: null,
   },
 
@@ -76,7 +76,7 @@ export const products = [
     name: "Rmichro",
     image: prod8,
     category: "Night lamp",
-    originalPrice: "1,500",
+    originalPrice: "1500",
     discountedPrice: null,
   },
 ];

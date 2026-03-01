@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./table.css";
+import "./compTable.css";
 import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
