@@ -160,7 +160,12 @@ const ContactForm = () => {
             error={errors.message}
           />
 
-          <Button type="submit" label={"Submit"} size="lg" variant="primary" />
+          <Button
+            type="submit"
+            label={"Submit"}
+            size="lg"
+            variant={"primary"}
+          />
         </form>
       </div>
     </div>
